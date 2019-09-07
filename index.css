@@ -1,0 +1,300 @@
+@font-face {
+  font-family: PopLight;
+  src: url("fonts/Poppins-Light.ttf");
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: PopLight;
+}
+
+.title {
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.title-wrapper {
+  height: inherit;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 900px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 103px;
+  height: 29px;
+  background-image: url(./images/logo.png);
+  background-size: 355px 344px;
+  background-position: -73px -197px;
+}
+
+.username {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.menu .dot {
+  opacity: 0;
+  width: 7px;
+  height: 7px;
+  background-color: #000;
+  border-radius: 25px;
+  margin: 0 5px;
+}
+
+.line-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.line-wrapper .line {
+  -webkit-transition: all 1.4s ease-in-out;
+  transition: all 1.4s ease-in-out;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-photo-container {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-photo-container .gradient {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(pink), to(lightblue));
+  background: linear-gradient(to right, pink, lightblue);
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
+}
+
+.main-photo-container .gradient .main-photo-wrapper {
+  position: relative;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  background-color: #fff;
+  border-radius: 150px;
+  width: 0;
+  height: 0;
+}
+
+.main-photo-container .main-photo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+}
+
+.grid-wrapper {
+  display: -ms-grid;
+  display: grid;
+  height: 200px;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.about {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  margin-top: -30px;
+  opacity: 0;
+}
+
+.info {
+  float: right;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.info .social .social-element {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin: -20px 20px 0 20px;
+  opacity: 0;
+}
+
+.info .social .social-element .number1, .info .social .social-element .number2, .info .social .social-element .number3 {
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  opacity: 0;
+  margin-left: -20px;
+}
+
+.info .social .social-element:first-child {
+  margin: -20px 20px 0 0;
+}
+
+.info .social .social-element:last-child {
+  margin: -20px 0 0 20px;
+}
+
+.info .buttons {
+  width: 70%;
+  margin-top: 10px;
+}
+
+.info .buttons .follow-btn {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  opacity: 0;
+  float: left;
+  width: 50%;
+  height: 25px;
+  border-radius: 15px;
+  background-color: lightskyblue;
+  border: none;
+  color: #fff;
+}
+
+.info .buttons .recomendations-btn {
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 13%;
+  float: right;
+  height: 25px;
+  border-radius: 15px;
+  background-color: lightskyblue;
+  border: none;
+}
+
+.flex-photos {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-row .photo {
+  margin: 5px;
+  width: 33%;
+}
+
+.flex-row .photo img {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  width: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 425px) {
+  .info {
+    margin-left: -100px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

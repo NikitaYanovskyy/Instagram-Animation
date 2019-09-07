@@ -1,0 +1,229 @@
+@mixin maxWidth {
+    max-width: 900px;
+    margin: 0 auto;
+}
+@mixin Transition {
+    transition: all 2s ease-in-out;
+}
+@mixin TransitionText {
+    transition: all 0.3s ease-in-out;
+}
+@font-face{
+    font-family: PopLight;
+    src: url('fonts/Poppins-Light.ttf')
+}
+*,*:before,*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+font-family: PopLight;
+}
+
+
+
+
+
+
+//Title
+
+.title{
+    height: 70px;
+    display: flex;
+    align-items: flex-end
+}
+.title-wrapper{
+    height: inherit;
+    @include maxWidth;
+    width: 900px;
+    position: relative;
+}
+//Title-inner
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(0 ,-50%);
+    opacity: 0;
+    @include TransitionText;
+    width: 103px;
+    height: 29px;
+    background-image: url(./images/logo.png);
+    background-size: 355px 344px;
+    background-position: -73px -197px;
+}
+.username{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @include TransitionText;
+    opacity: 0;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.menu{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    .dot{
+        opacity: 0;
+        width: 7px;
+        height: 7px;
+        background-color: #000;
+        border-radius: 25px;
+        margin: 0 5px;
+    }
+}
+
+
+.line-wrapper{
+    display: flex;
+    justify-content: center;
+    .line{
+        transition: all 1.4s ease-in-out;
+        width: 0;
+        height: 1px;
+        background-color: #000;
+    }
+}
+///Main
+
+
+main{
+    @include maxWidth;
+    
+}
+.main-photo-container{
+    @include Transition();
+    position: absolute;
+    left: 0; //-15px
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    .gradient{
+        @include Transition;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, pink , lightblue); 
+        width: 100%;
+        height: 100%;
+        clip-path: circle(100% at 50% 50%); //20%
+        .main-photo-wrapper{
+            position: relative;
+            @include Transition;
+            background-color: #fff;
+            border-radius: 150px;
+            width: 0; //110px
+        height: 0; // 110px
+        }    
+    }
+    .main-photo{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        width: 100%; //90%
+        height: 100%; //90%
+        border-radius: 150px;
+    }
+}
+.grid-wrapper{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.about{
+    transition: all 1s ease-in;
+    margin-top: -30px;
+    opacity: 0;
+}
+.info{
+    float: right;
+    grid-column: 2/3;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .social{
+        display: flex;
+        justify-content: space-between;
+        .social-element{
+            @include TransitionText;
+            margin: -20px 20px 0 20px;
+            opacity: 0;
+            .number1 , .number2 , .number3{
+             transition: all 0.7s ease-out;
+             opacity: 0;
+             margin-left: -20px;
+            }
+        }
+        .social-element:first-child{
+            margin: -20px 20px 0 0;
+        }
+        .social-element:last-child{
+            margin: -20px 0 0 20px;
+        }
+    }
+    .buttons{
+        width: 70%;
+        margin-top: 10px;
+        .follow-btn{
+            transition: all 1s ease-in;
+            opacity: 0;
+            float: left;
+            width: 50%;
+            height: 25px;
+            border-radius: 15px;
+            background-color: lightskyblue;
+            border: none;
+            color: #fff;
+        }
+        .recomendations-btn{
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 13%;
+            float: right;
+            height: 25px;
+            border-radius: 15px;
+            background-color: lightskyblue;
+            border: none;
+        }
+    }
+}
+
+/////////////////Gallery
+
+.flex-photos{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.flex-row{
+    display: flex;
+    .photo{
+        margin: 5px;
+        width: 33%;
+        img{
+            transition: all 1s ease-in-out;
+            width: 0;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and(max-width: 425px){
+    .info{
+        margin-left: -100px;
+    }
+}
