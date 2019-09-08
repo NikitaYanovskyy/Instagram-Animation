@@ -141,9 +141,9 @@ main{
     grid-template-rows: 1fr 1fr;
 }
 .about{
+    opacity: 0;
     transition: all 1s ease-in;
     margin-top: -30px;
-    opacity: 0;
 }
 .info{
     float: right;
@@ -157,12 +157,12 @@ main{
         display: flex;
         justify-content: space-between;
         .social-element{
+            opacity: 0;
             @include TransitionText;
             margin: -20px 20px 0 20px;
-            opacity: 0;
             .number1 , .number2 , .number3{
-             transition: all 0.7s ease-out;
              opacity: 0;
+             transition: all 0.7s ease-out;
              margin-left: -20px;
             }
         }

@@ -138,9 +138,13 @@ $(`.line`).delay(5300).queue(function(next){
     $(this).css(`width` , `100%`);
     next();
   })
+
+  ///////Scroll
   $("html, body").delay(6400).animate({ 
       scrollTop: $(document).height() 
     }, 1500);
+
+
   $(`.photo3 img`).delay(6700).queue(function(next){
     $(this).css(`height` , width);
     $(this).css(`width` , `100%`);
