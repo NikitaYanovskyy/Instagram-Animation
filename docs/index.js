@@ -35,13 +35,18 @@ MainPhoto = () =>{
             $(this).css('clip-path','circle('+65+'px at '+now+'% '+now+'%)'); 
           }
     })
-    $(`.main-photo-container`).delay(2400).animate({
+    $(`.main-photo-container`).animate({duration: 2},{
+      step: function(now,fx){
+        $(this).css(`transition`,'all '+now+'s ease-in-out');
+      }
+    })
+    $(`.main-photo-container`).delay(2000).animate({
         width: `130px`,
         height: `130px`,
         left: `50%`,
         top: `80px`
     })
-    $(`.main-photo-container`).delay(2000).animate({
+    $(`.main-photo-container`).delay(1800).animate({
       left: `${gridWrapper.left}`
     })
     $(`.main-photo-container`).animate({transformation: 0},{

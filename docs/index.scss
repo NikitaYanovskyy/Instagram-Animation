@@ -101,7 +101,6 @@ main{
     
 }
 .main-photo-container{
-    @include Transition();
     position: absolute;
     z-index: 10;
     left: 50%;
