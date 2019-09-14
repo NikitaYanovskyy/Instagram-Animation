@@ -3,6 +3,7 @@ $(`document`).ready(()=>{
 
 var width = $(`.photo`).css(`width`);
 var gridWrapper = $(`.grid-wrapper`).offset();
+console.log(gridWrapper.left);
 $(`photo`).css(`height` , width);
 
 /////// Animation!
@@ -37,12 +38,18 @@ MainPhoto = () =>{
     $(`.main-photo-container`).delay(2400).animate({
         width: `130px`,
         height: `130px`,
-        left: `45%`,
+        left: `50%`,
         top: `80px`
     })
     $(`.main-photo-container`).delay(2000).animate({
-        left: `${gridWrapper.left}`,
+      left: `${gridWrapper.left}`
     })
+    $(`.main-photo-container`).animate({transformation: 0},{
+      step: function(now,fx) {
+          $(this).css('transform','translate('+now+','+now+')') 
+        }
+  })
+    
 
 //////////////Title
    $('.logo').delay(5300).queue(function (next) {
@@ -140,8 +147,8 @@ $(`.line`).delay(5300).queue(function(next){
   })
 
   ///////Scroll
-  $("html, body").delay(6400).animate({ 
-      scrollTop: $(document).height() 
+  $("html, body").delay(6500).animate({ 
+      scrollTop: $(`.flex-photos`).offset().top
     }, 1500);
 
 
